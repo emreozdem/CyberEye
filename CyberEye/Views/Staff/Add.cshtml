@@ -1,0 +1,88 @@
+﻿@model CyberEye.Models.Entity.TBLSTAFF
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NAME, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>Surname</label>
+        @Html.TextBoxFor(m => m.SURNAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SURNAME, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>Birthday</label>
+        <input type="date" class="form-control" name="BIRTHDAY" />
+    </div>
+
+    <div>
+        <label>Sallary</label>
+        @Html.TextBoxFor(m => m.SALLARY, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SALLARY, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>TCNO</label>
+        @Html.TextBoxFor(m => m.TCNO, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TCNO, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>IBAN</label>
+        @Html.TextBoxFor(m => m.IBAN, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.IBAN, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>ADDRESS</label>
+        @Html.TextBoxFor(m => m.ADDRESS, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ADDRESS, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>Phone Number</label>
+        @Html.TextBoxFor(m => m.PHONE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PHONE, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label>Department</label>
+        @Html.DropDownListFor(m => m.TBLDEPARTMENT.DEPARTMENTID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Add Employee</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {alert('Employee Added')})
+    </script>
+
+
+
+
+
+
+
+
+
+</form>

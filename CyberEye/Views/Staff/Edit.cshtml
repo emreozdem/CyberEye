@@ -1,0 +1,54 @@
+﻿@model CyberEye.Models.Entity.TBLSTAFF 
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Staff", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(m => m.STAFFID, new { @class = "form-control" })
+    <br />
+
+    <label>Name</label>
+    @Html.TextBoxFor(m => m.NAME, new { @class = "form-control" })
+    <br />
+
+    <label>Surname</label>
+    @Html.TextBoxFor(m => m.SURNAME, new { @class = "form-control" })
+    <br />
+
+    <label>Department</label>
+    @Html.DropDownListFor(m => m.TBLDEPARTMENT.DEPARTMENTID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+
+    <label>Birthday</label>
+    <input type="date" class="form-control" name="BIRTHDAY" />
+    <br />
+
+    <label>Sallary</label>
+    @Html.TextBoxFor(m => m.SALLARY, new { @class = "form-control" })
+    <br />
+
+    <label>TC NO</label>
+    @Html.TextBoxFor(m => m.TCNO, new { @class = "form-control" })
+    <br />
+
+    <label>IBAN</label>
+    @Html.TextBoxFor(m => m.IBAN, new { @class = "form-control" })
+    <br />
+
+    <label>Address</label>
+    @Html.TextBoxFor(m => m.ADDRESS, new { @class = "form-control" })
+    <br />
+
+    <label>Phone</label>
+    @Html.TextBoxFor(m => m.PHONE, new { @class = "form-control" })
+    <br />
+
+
+</div>
+    <div>
+        <button class="btn btn-warning">Update Employee</button>
+    </div>
+}

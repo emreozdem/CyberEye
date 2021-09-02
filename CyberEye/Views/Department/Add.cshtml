@@ -1,0 +1,22 @@
+﻿@model CyberEye.Models.Entity.TBLDEPARTMENT
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>New Department Name</label>
+        @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Department, "", new {@style="color:red"})
+        
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Add Department</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {alert('Department Added')})
+    </script>
+</form>
+

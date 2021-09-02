@@ -1,0 +1,31 @@
+﻿@using CyberEye.Models.Entity
+@model List<TBLDEPARTMENT>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>DEPARTMENT ID</th>
+        <th>DEPARTMENT</th>
+    </tr>
+    <tbody>
+        @foreach (var dprt in Model)
+        {
+            <tr>
+                <th><center>@dprt.DEPARTMENTID</center></th>
+                <th><center>@dprt.Department</center></th>
+
+                <td>
+                    @*<a href="/Department/Delete/@dprt.DEPARTMENTID" class="btn btn-danger">DELETE</a>*@
+                    <a href="/Department/Edit/@dprt.DEPARTMENTID" class="btn btn-warning">EDIT</a>
+                    @Html.ActionLink("DELETE", "Delete", new { id = dprt.DEPARTMENTID },
+                   new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you want to delete?')" })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Department/Add" class="btn btn-success">ADD NEW DEPARTMENT</a>

@@ -1,0 +1,20 @@
+﻿@model CyberEye.Models.Entity.TBLDEPARTMENT
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Department", FormMethod.Post))
+    {
+<div class="form-group">
+
+    @Html.HiddenFor(m => m.DEPARTMENTID, new { @class = "form-control" })
+    <br />
+    Department Name
+    @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Department, "", new { @style = "color:red" })
+</div>
+        <div>
+            <button class="btn btn-warning">Update Department</button>
+        </div>
+    }

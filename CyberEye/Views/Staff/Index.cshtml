@@ -1,0 +1,52 @@
+﻿@using CyberEye.Models.Entity
+@model List<TBLSTAFF>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>DEPARTMENT</th>
+        <th>BIRTHDAY</th>
+        <th>SALLARY</th>
+        <th>TCNO</th>
+        <th>IBAN</th>
+        <th>ADDRESS</th>
+        <th>PHONE</th>
+
+    </tr>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+        <tr>
+            <th><center>@emp.STAFFID</center></th>
+            <th><center>@emp.NAME</center></th>
+            <th><center>@emp.SURNAME</center></th>
+            <th><center>@emp.TBLDEPARTMENT.Department</center></th>
+            <th><center>@emp.BIRTHDAY</center></th>
+            <th><center>@emp.SALLARY</center></th>
+            <th><center>@emp.TCNO</center></th>
+            <th><center>@emp.IBAN</center></th>
+            <th><center>@emp.ADDRESS</center></th>
+            <th><center>@emp.PHONE</center></th>
+            
+            <td>
+                <a href="/Staff/Edit/@emp.STAFFID" class="btn btn-warning">EDIT</a>
+            </td>
+
+            <td>
+                @Html.ActionLink("DELETE", "Delete", new { id = emp.STAFFID },
+                   new { @class = "btn btn-danger", onclick = 
+                   "return confirm('Are you sure you want to delete?')" })
+            </td>
+            
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Staff/Add" class="btn btn-success">ADD NEW EMPLOYEE</a>
