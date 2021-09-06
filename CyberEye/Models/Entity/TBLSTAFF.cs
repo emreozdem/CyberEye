@@ -11,34 +11,18 @@ namespace CyberEye.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TBLSTAFF
     {
         public int STAFFID { get; set; }
-
-        
         public string NAME { get; set; }
-
-        
         public string SURNAME { get; set; }
         public Nullable<System.DateTime> BIRTHDAY { get; set; }
-
-        
         public Nullable<short> SALLARY { get; set; }
-
-        
         public string TCNO { get; set; }
-
-        
         public string IBAN { get; set; }
-        
-        
         public string ADDRESS { get; set; }
-
-        
         public string PHONE { get; set; }
-
         public Nullable<int> DEPARMENTID { get; set; }
     
         public virtual TBLDEPARTMENT TBLDEPARTMENT { get; set; }

@@ -12,10 +12,16 @@ namespace CyberEye.Controllers
         // GET: Department
         CyberEyeEntities1 db = new CyberEyeEntities1();
 
-        public ActionResult Index()
+        public ActionResult Index(string s)
         {
-            var degerler = db.TBLDEPARTMENT.ToList();
-            return View(degerler);
+            var degerler = from d in db.TBLDEPARTMENT select d;
+            if (!string.IsNullOrEmpty(s))
+            {
+                degerler = degerler.Where(m => m.Department.Contains(s));
+            }
+            return View(degerler.ToList());
+            //var degerler = db.TBLDEPARTMENT.ToList();
+            // return View(degerler);
         }
         [HttpGet]
         public ActionResult Add()

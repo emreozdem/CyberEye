@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+@using (Html.BeginForm("Index","Staff",FormMethod.Get))
+            {
+                <p>
+                    Employee Name: @Html.TextBox("s")
+                    <input type="submit" value="Search" />
+                </p>
+            }
+
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -43,10 +51,10 @@
                    new { @class = "btn btn-danger", onclick = 
                    "return confirm('Are you sure you want to delete?')" })
             </td>
-            
 
         </tr>
         }
     </tbody>
 </table>
 <a href="/Staff/Add" class="btn btn-success">ADD NEW EMPLOYEE</a>
+

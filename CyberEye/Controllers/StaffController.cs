@@ -12,10 +12,16 @@ namespace CyberEye.Controllers
     {
         // GET: Staff
         CyberEyeEntities1 db = new CyberEyeEntities1();
-        public ActionResult Index()
+        public ActionResult Index(string s)
         {
-            var degerler = db.TBLSTAFF.ToList();
-            return View(degerler);
+            var degerler = from d in db.TBLSTAFF select d;
+            if(!string.IsNullOrEmpty(s))
+            {
+                degerler = degerler.Where(m => m.NAME.Contains(s));
+            }
+            return View(degerler.ToList());
+            //var degerler = db.TBLSTAFF.ToList();
+            //return View(degerler);
         }
 
         [HttpGet]
@@ -86,6 +92,8 @@ namespace CyberEye.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
     }
 }

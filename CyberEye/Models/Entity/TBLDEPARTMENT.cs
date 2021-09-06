@@ -11,8 +11,7 @@ namespace CyberEye.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TBLDEPARTMENT
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,9 +21,6 @@ namespace CyberEye.Models.Entity
         }
     
         public int DEPARTMENTID { get; set; }
-        
-        [Required(ErrorMessage = "You cannot leave this field blank.")]
-        [StringLength(50,ErrorMessage = "You have exceeded the character limit")]
         public string Department { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
