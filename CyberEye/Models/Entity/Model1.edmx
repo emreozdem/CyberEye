@@ -37,14 +37,14 @@
           <Property Name="PHONE" Type="varchar" MaxLength="20" />
           <Property Name="DEPARMENTID" Type="int" />
         </EntityType>
-        <EntityType Name="UserProfile">
+        <EntityType Name="TBLUSER">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="IsActive" Type="bit" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="16" />
+          <Property Name="password" Type="varchar" MaxLength="16" />
         </EntityType>
         <Association Name="FK_TBLSTAFF_TBLDEPARTMENT1">
           <End Role="TBLDEPARTMENT" Type="Self.TBLDEPARTMENT" Multiplicity="0..1" />
@@ -62,7 +62,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLDEPARTMENT" EntityType="Self.TBLDEPARTMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLSTAFF" EntityType="Self.TBLSTAFF" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLUSER" EntityType="Self.TBLUSER" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TBLSTAFF_TBLDEPARTMENT1" Association="Self.FK_TBLSTAFF_TBLDEPARTMENT1">
             <End Role="TBLDEPARTMENT" EntitySet="TBLDEPARTMENT" />
             <End Role="TBLSTAFF" EntitySet="TBLSTAFF" />
@@ -126,16 +126,16 @@
             <End Role="TBLDEPARTMENT" EntitySet="TBLDEPARTMENT" />
             <End Role="TBLSTAFF" EntitySet="TBLSTAFF" />
           </AssociationSet>
-          <EntitySet Name="UserProfile" EntityType="CyberEyeModel.UserProfile" />
+          <EntitySet Name="TBLUSER" EntityType="CyberEyeModel.TBLUSER" />
         </EntityContainer>
-        <EntityType Name="UserProfile">
+        <EntityType Name="TBLUSER">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -178,13 +178,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserProfile">
-            <EntityTypeMapping TypeName="CyberEyeModel.UserProfile">
-              <MappingFragment StoreEntitySet="UserProfile">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <EntitySetMapping Name="TBLUSER">
+            <EntityTypeMapping TypeName="CyberEyeModel.TBLUSER">
+              <MappingFragment StoreEntitySet="TBLUSER">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

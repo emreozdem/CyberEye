@@ -12,6 +12,8 @@ namespace CyberEye.Controllers
     {
         // GET: Staff
         CyberEyeEntities1 db = new CyberEyeEntities1();
+
+        [Authorize]
         public ActionResult Index(string s)
         {
             var degerler = from d in db.TBLSTAFF select d;

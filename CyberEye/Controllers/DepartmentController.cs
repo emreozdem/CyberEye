@@ -12,6 +12,7 @@ namespace CyberEye.Controllers
         // GET: Department
         CyberEyeEntities1 db = new CyberEyeEntities1();
 
+        [Authorize]
         public ActionResult Index(string s)
         {
             var degerler = from d in db.TBLDEPARTMENT select d;

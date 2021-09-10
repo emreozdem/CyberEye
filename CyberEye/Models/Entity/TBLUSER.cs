@@ -12,11 +12,11 @@ namespace CyberEye.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class UserProfile
+    public partial class TBLUSER
     {
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public Nullable<bool> IsActive { get; set; }
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="CyberEyeModel.TBLDEPARTMENT" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CyberEyeModel.TBLSTAFF" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="CyberEyeModel.FK_TBLSTAFF_TBLDEPARTMENT1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="CyberEyeModel.UserProfile" Width="1.5" PointX="6" PointY="3.25" />
+        <EntityTypeShape EntityType="CyberEyeModel.TBLUSER" Width="1.5" PointX="5.75" PointY="3.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

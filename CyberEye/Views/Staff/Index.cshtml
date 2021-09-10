@@ -5,13 +5,18 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-@using (Html.BeginForm("Index","Staff",FormMethod.Get))
-            {
-                <p>
-                    Employee Name: @Html.TextBox("s")
-                    <input type="submit" value="Search" />
-                </p>
-            }
+@using (Html.BeginForm("Index", "Staff", FormMethod.Get))
+{
+    <p>
+        Employee Name: @Html.TextBox("s")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+
+
+
 
 <table class="table table-bordered">
     <tr>
@@ -30,29 +35,33 @@
     <tbody>
         @foreach (var emp in Model)
         {
-        <tr>
-            <th><center>@emp.STAFFID</center></th>
-            <th><center>@emp.NAME</center></th>
-            <th><center>@emp.SURNAME</center></th>
-            <th><center>@emp.TBLDEPARTMENT.Department</center></th>
-            <th><center>@emp.BIRTHDAY</center></th>
-            <th><center>@emp.SALLARY</center></th>
-            <th><center>@emp.TCNO</center></th>
-            <th><center>@emp.IBAN</center></th>
-            <th><center>@emp.ADDRESS</center></th>
-            <th><center>@emp.PHONE</center></th>
-            
-            <td>
-                <a href="/Staff/Edit/@emp.STAFFID" class="btn btn-warning">EDIT</a>
-            </td>
+            <tr>
+                <th><center>@emp.STAFFID</center></th>
+                <th><center>@emp.NAME</center></th>
+                <th><center>@emp.SURNAME</center></th>
+                <th><center>@emp.TBLDEPARTMENT.Department</center></th>
+                <th><center>@emp.BIRTHDAY</center></th>
+                <th><center>@emp.SALLARY</center></th>
+                <th><center>@emp.TCNO</center></th>
+                <th><center>@emp.IBAN</center></th>
+                <th><center>@emp.ADDRESS</center></th>
+                <th><center>@emp.PHONE</center></th>
 
-            <td>
-                @Html.ActionLink("DELETE", "Delete", new { id = emp.STAFFID },
-                   new { @class = "btn btn-danger", onclick = 
-                   "return confirm('Are you sure you want to delete?')" })
-            </td>
+                <td>
+                    <a href="/Staff/Edit/@emp.STAFFID" class="btn btn-warning">EDIT</a>
+                </td>
 
-        </tr>
+                <td>
+                    @Html.ActionLink("DELETE", "Delete", new { id = emp.STAFFID },
+                       new
+                            {
+                                @class = "btn btn-danger",
+                                onclick =
+                       "return confirm('Are you sure you want to delete?')"
+                            })
+                </td>
+
+            </tr>
         }
     </tbody>
 </table>

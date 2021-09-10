@@ -28,6 +28,6 @@ namespace CyberEye.Models.Entity
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TBLDEPARTMENT> TBLDEPARTMENT { get; set; }
         public virtual DbSet<TBLSTAFF> TBLSTAFF { get; set; }
-        public virtual DbSet<UserProfile> UserProfile { get; set; }
+        public virtual DbSet<TBLUSER> TBLUSER { get; set; }
     }
 }
