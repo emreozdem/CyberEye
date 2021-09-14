@@ -12,71 +12,84 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Business Login Form Responsive Widget Template :: w3layouts</title>
-    <!-- Meta-Tags -->
+    <title>Login V16</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Business Login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!-- //Meta-Tags -->
-    <!-- css files -->
-    <link href="~/web/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="~/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- //css files -->
-    <!-- google fonts -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- //google fonts -->
-
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/Login_v16/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Login_v16/css/main.css">
+    <!--===============================================================================================-->
 </head>
 <body>
 
-    <div class="signupform">
-        <div class="container">
-            <!-- main content -->
-            <div class="agile_info">
-                <div class="w3l_form">
-                    <div class="left_grid_info">
-                        <h1>CYBER EYE PORTAL</h1>
-                        <p>Welcome to the CyberEye portal. You must be logged in to view and edit employees and departments.</p>
-                        <img src="~/web/images/download.png" alt="" />
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('/Login_v16/images/bg-01.jpg');">
+
+            <div class="wrap-login100 p-t-30 p-b-50">
+                <span class="login100-form-title p-b-41">
+                    Cyber Eye Portal Admin Login
+                </span>
+
+                @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                {
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input class="input100" type="text" name="username" placeholder="User name">
+                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                     </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-32">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+
+                }
                 </div>
-                <div class="w3_info">
-                    <h2>Login to your Account</h2>
-                    <p>Enter your details to login.</p>
-                    @using (Html.BeginForm("Login", "Security", FormMethod.Post))
-                    {
-                        <label>Email Address</label>
-                        <div class="input-group">
-                            <span class="fa fa-envelope" aria-hidden="true"></span>
-                            <input type="text" placeholder="Enter Your User Name" required="" name="username">
-                        </div>
-                        <label>Password</label>
-                        <div class="input-group">
-                            <span class="fa fa-lock" aria-hidden="true"></span>
-                            <input type="Password" placeholder="Enter Password" required="" name="password">
-                        </div>
-                        <div class="login-check">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Remember me</label>
-                        </div>
-                        <button class="btn btn-danger btn-block" type="submit">Login</button>
-                    }
-                <p class="account">Check out Emre Özdem's  <a href="#">github </a>account </p>
-                    
-                </div>
-            </div>
-            <!-- //main content -->
         </div>
-        
     </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Login_v16/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/Login_v16/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Login_v16/js/main.js"></script>
 
 </body>
 </html>

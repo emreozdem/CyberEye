@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CyberEye.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace CyberEye.Controllers
 {
