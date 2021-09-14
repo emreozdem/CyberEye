@@ -26,17 +26,20 @@
             </div>
 
             <nav id="navbar" class="navbar">
+            
                 <ul>
-                    <li><a class="active " href="/Home/Index">Home</a></li>
-                    <li><a href="/Department/Index">Departments</a></li>
-                    <li><a href="/Staff/Index">Staff</a></li>
-  
+
+                    <li><a class="active " href="/Home/Index"><h2>Home</h2></a></li>
+                    <li><a href="/Department/Index"> <h2>Departments</h2> </a></li>
+                    <li><a href="/Staff/Index"> <h2>Staff</h2> </a></li>
+
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <div><h1 style="color:white">@HttpContext.Current.User.Identity.Name</h1></div>
-            
+            <div><h3 style="color:white">Welcome @HttpContext.Current.User.Identity.Name</h3></div>
+            <div><a href="/Security/Logout" class="btn btn-danger btn-lg active">Sign Out</a></div>
+
         </div>
     </header>
 
